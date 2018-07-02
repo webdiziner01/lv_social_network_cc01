@@ -37,6 +37,16 @@ $this->validate($request ,[
 
 
 		public function getSignin(){
+
+			  /*if (Auth::check()) {
+        return redirect('/');
+   			 }*/
+ 
+
+
+   			 	//dd(get_class_methods(Auth::class));
+
+
 			return view('auth.signin');
 		}
 		public function postSignin(Request $request){

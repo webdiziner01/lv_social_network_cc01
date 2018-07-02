@@ -21,13 +21,15 @@ Route::get('/alert', function(){
 });
 Route::get('/signup',[
 	'uses' => '\Chatty\Http\Controllers\AuthController@getSignup',
-	'as' => 'auth.signup'
+	'as' => 'auth.signup',
+	'middleware' => 'guest'
+
 
 ]);
 
 Route::post('/signup',[
-	'uses' => '\Chatty\Http\Controllers\AuthController@postSignup'
-
+	'uses' => '\Chatty\Http\Controllers\AuthController@postSignup',
+	'middleware' => 'guest'
 
 ]);
 
@@ -35,12 +37,14 @@ Route::post('/signup',[
 
 Route::get('/signin',[
 	'uses' => '\Chatty\Http\Controllers\AuthController@getSignin',
-	'as' => 'auth.signin'
+	'as' => 'auth.signin',
+	'middleware' => 'guest'
 
 ]);
 
 Route::post('/signin',[
-	'uses' => '\Chatty\Http\Controllers\AuthController@postSignin'
+	'uses' => '\Chatty\Http\Controllers\AuthController@postSignin',
+	'middleware' => 'guest'
 
 
 ]);
