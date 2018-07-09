@@ -70,6 +70,16 @@ Route::get('/search',[
 
 
 
+/*
+* User Profile
+*/
+
+
+Route::get('/user/{username}',[
+'uses' => '\Chatty\Http\Controllers\ProfileController@getProfile',
+'as' => 'profile.index'
+]);
+
 
 
 
