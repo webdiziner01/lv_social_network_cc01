@@ -81,9 +81,17 @@ Route::get('/user/{username}',[
 ]);
 
 
+Route::get('/profile/edit',[
+    'uses' => '\Chatty\Http\Controllers\ProfileController@getEdit',
+    'as' => 'profile.edit',
+    'middleware' => 'auth'
+]);
 
 
-
+Route::post('/profile/edit',[
+    'uses' => '\Chatty\Http\Controllers\ProfileController@postEdit',
+    'middleware' => 'auth'
+]);
 
 
 
